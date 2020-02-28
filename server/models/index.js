@@ -1,11 +1,13 @@
 var Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('twitter', 'postgres', '87654321');
+const sequelize = new Sequelize('twitter', 'postgres', '87654321', {
+    dialect: 'postgres'
+});
 
 const models = {
 
-    user: sequelize.import('./user'),
-    post: sequelize.import('./post')
+    User: sequelize.import('./user'),
+    Post: sequelize.import('./post')
 
 };
 

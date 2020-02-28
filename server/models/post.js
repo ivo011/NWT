@@ -1,3 +1,4 @@
+import models from './index'
 export default (sequelize, DataTypes) => {
     const Post = sequelize.define('post', {
         text: {
@@ -7,7 +8,7 @@ export default (sequelize, DataTypes) => {
 
     Post.associate = (models) => {
         Post.belongsTo(models.User, {
-            foreignKey: 'userId'
+            foreignKey: 'user_id'
         })
     };
 
