@@ -7,7 +7,11 @@ const sequelize = new Sequelize('twitter', 'postgres', '87654321', {
 const models = {
 
     User: sequelize.import('./user'),
-    Post: sequelize.import('./post')
+    Post: sequelize.import('./post'),
+    Comment: sequelize.import('./comment'),
+    Follow: sequelize.import('./follow'),
+    Like: sequelize.import('./like'),
+    
 
 };
 

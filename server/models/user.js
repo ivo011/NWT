@@ -11,6 +11,12 @@ export default (sequelize, DataTypes) => {
         password: {
             type: DataTypes.STRING,          
         },
+        avatar: {
+            type: DataTypes.STRING, 
+        }, 
+        age: {
+            type: DataTypes.INTEGER, 
+        }
     });
 
     User.associate = (models) => {
