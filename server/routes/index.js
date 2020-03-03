@@ -12,17 +12,26 @@ router.get('/test', (req, res)=>{
     res.send(req.body); 
 }); 
 
-router.post('/create', function(req, res) {
+router.post('/user/create', (req, res) => {
     models.User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
       avatar: req.body.avatar,
       age: req.body.age,      
-    }).then(function() {
+    }).then(() => {
       res.redirect('/');
     });
   });
+
+  router.post('/post/create', (req, res) => {
+    models.Post.create({
+      text: req.body.text,       
+    }).then(() => {
+      res.redirect('/');
+    });
+  });
+
 
 
 export default router; 
