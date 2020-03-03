@@ -24,4 +24,4 @@ Object.keys(models).forEach(modelName => {
 models.sequelize = sequelize;
 models.Sequelize = Sequelize;
 
-export default models;
+module.exports = models;
