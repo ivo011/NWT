@@ -45,7 +45,7 @@ router.post('/login', (req, res) => {
     }).then(async (user) => {
 
         if (user == null) {            
-            return res.status(400).send("Cannot find user");
+            return res.status(400).send("Cannot fnd user");
         }
 
         const result = await bcrypt.compare(req.body.password, user.password)
