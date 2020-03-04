@@ -6,32 +6,10 @@ const models  = require('../models');
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
-
-router.get('/test', (req, res)=>{
-    console.log(req.body);
-    res.send(req.body); 
-}); 
-
-router.post('/user/create', (req, res) => {
-    models.User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-      avatar: req.body.avatar,
-      age: req.body.age,      
-    }).then(() => {
-      res.redirect('/');
-    });
-  });
-
-  router.post('/post/create', (req, res) => {
-    models.Post.create({
-      text: req.body.text,       
-    }).then(() => {
-      res.redirect('/');
-    });
-  });
+router.get('/', (req, res) => {
+  res.send("Home route");
+});
 
 
 
-export default router; 
+module.exports = router; 
