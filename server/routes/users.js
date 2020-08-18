@@ -1,7 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken'); 
 const models = require('../models');
+const {registerValidation, LoginValidation} = require('../config/validation');
 const router = express.Router();
 
 
@@ -10,16 +12,27 @@ router.use(bodyParser.urlencoded({
     extended: true
 }));
 
-router.get('/', (req, res) => {
-    models.User.findAll()
-        .then((users) => {
-            res.send(users);
-        })
-});
 
-router.post('/create', async (req, res) => {
-    try {
-        const salt = await bcrypt.genSalt();
+//USER REGISTER
+
+router.get('/register', (req, res) => {
+    res.render('register.ejs')
+  })
+
+
+router.post('/register', async (req, res) => {
+    
+    //Validation
+    const { error } = registerValidation(req.body); 
+    if(error) return res.status(400).send(error.details[0].message)
+
+    //Provjera postoji li vec email
+    const emailExists = await models.User.findOne({ where: { email: req.body.email } });    
+    if(emailExists) return res.status(400).send("Email is already used!!");
+
+    //Create user
+    try {        
+        const salt = await bcrypt.genSalt(10);
         const hashedPass = await bcrypt.hash(req.body.password, salt);
 
         models.User.create({
@@ -32,32 +45,37 @@ router.post('/create', async (req, res) => {
             res.send('User CREATED!');
         })
     } catch (error) {
-        res.send('User registration error!');
+        res.status(400).send('User registration error!');
     }
-
 });
 
-router.post('/login', (req, res) => {
-    models.User.findOne({
-        where: {
-            username: req.body.username
-        }
-    }).then(async (user) => {
+//USER LOGIN
+ router.get('/login', (req, res) => {
+        res.render('login.ejs')
+      })
 
-        if (user == null) {            
-            return res.status(400).send("Cannot fnd user");
-        }
+router.post('/login', async (req, res) => {
 
-        const result = await bcrypt.compare(req.body.password, user.password)
+     //Validation
+     const { error } = LoginValidation(req.body); 
+     if(error) return res.status(400).send(error.details[0].message);
 
-        if (result == true) {
-            res.send("Successfully logged in!!");
-        } else {
-            res.send("Incorrect password!!");
-        }
-    }).catch(err => console.log(err))
+     //Provjera postoji li vec email (var user da je mozemo i posli koristit za provjeru pass)
+    const user = await models.User.findOne({ where: { email: req.body.email } });    
+    if(!user) return res.status(400).send("Email doesn't exist !!");
+     
+    //Provjera passworda
+    const validPassword = await bcrypt.compare(req.body.password, user.password); 
+    if(!validPassword) return res.status(400).send("Invalid password !!");
+     
+    //TOKEN
+    const token =  jwt.sign({id: user.id}, "secret"); 
+    res.header('auth_token', token).send(token); 
+    
 
-})
+}); 
+      
+//DELETE USER
 
 router.delete('/delete/:id', (req, res) => {
     models.User.destroy({
@@ -68,6 +86,7 @@ router.delete('/delete/:id', (req, res) => {
         res.send("User Deleted!");
     })
 })
+
 
 
 module.exports = router;

@@ -2,11 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser'); 
 const router = express.Router(); 
 const models  = require('../models');
+const verify = require('../config/verifyToken');
+
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
-router.get('/', (req, res) => {
+//Privatna ruta...
+router.get('/',verify, (req, res) => {
     models.Post.findAll()
     .then((posts)=>{
         res.send(posts);

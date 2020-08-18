@@ -7,7 +7,7 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
 router.get('/', (req, res) => {
-  res.send("Home route");
+  res.render('index.ejs',{name: 'Usis'});
 });
 
 
