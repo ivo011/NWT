@@ -1,5 +1,6 @@
 import React from "react"; 
 import "./layout.css"
+import Navigation from './navigation'; 
 
 
 const Layout = () => {
@@ -11,11 +12,15 @@ const Layout = () => {
             </div>
 
             <div className="navigation">
-
+                <Navigation/>
             </div>
 
             <div className="main">
                
+                <div className="element">  </div> 
+                <div className="element">  </div> 
+                <div className="element">  </div> 
+                <div className="element">  </div> 
                 <div className="element">  </div> 
                               
             </div>
