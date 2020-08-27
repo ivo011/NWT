@@ -15,12 +15,9 @@ const Layout = () => {
             </div>
 
             <div className="main">
-                <div className="element">  </div>
-                <div className="element">  </div>
-                <div className="element">  </div>
-                <div className="element">  </div>
-                <div className="element">  </div>
-                <div className="element">  </div>
+               
+                <div className="element">  </div> 
+                              
             </div>
             <div className="aside">
 
