@@ -9,7 +9,7 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
 //Privatna ruta...
-router.get('/',verify, (req, res) => {
+router.get('/', (req, res) => {
     models.Post.findAll()
     .then((posts)=>{
         res.send(posts);
