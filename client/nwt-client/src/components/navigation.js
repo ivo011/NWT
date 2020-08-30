@@ -1,5 +1,6 @@
 import React from 'react';
 import './navigation.css';
+import { Link } from 'react-router-dom'; 
 
 const Navigation = () => {
 
@@ -7,10 +8,10 @@ const Navigation = () => {
         <nav> 
             <h3>NWT_projekt</h3>
             <ul className="nav-links">
-                <li>Home</li>
-                <li>Notifications</li>
-                <li>Messages</li>
-                <li>About</li>
+                <Link to="/"> <li>Home</li> </Link>
+                <Link to="/notifications"> <li>Notifications</li> </Link>
+                <Link to="/messages"> <li>Messages</li> </Link>
+                <Link to="/about"> <li>About</li> </Link>                  
             </ul>
         </nav>
 

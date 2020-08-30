@@ -3,7 +3,7 @@ import "./layout.css"
 import Navigation from './navigation'; 
 
 
-const Layout = () => {
+const Layout = ({children}) => {
 
     return ( 
         <div className="layout">
@@ -16,7 +16,7 @@ const Layout = () => {
             </div>
 
             <div className="main">
-               
+                {children}
                 <div className="element">  </div> 
                 <div className="element">  </div> 
                 <div className="element">  </div> 
