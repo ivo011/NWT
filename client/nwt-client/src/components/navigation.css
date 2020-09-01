@@ -18,7 +18,7 @@ nav{
 
 a{
     text-decoration: none;
-    font-size: 1.5vw;
+    font-size: 1em;
     font-weight: 700; 
     color:black;
 }
@@ -28,12 +28,6 @@ a:hover {
     border-bottom: 3px solid #2C72A0;
   
   }
-
-@media screen and (max-width: 1150px) {
-    a{       
-        font-size: 2vw;       
-    }
-}
 
 
 ul{

@@ -41,12 +41,6 @@ body{
     border: 2px solid rgb(196, 141, 141); 
     grid-area: main; 
 }
-.element{
-    width:30%; 
-    height:300px; 
-    border: 2px solid rgb(131, 70, 70); 
-    margin: 10px auto;
-}
 
 .aside{
     border: 2px solid rgb(190, 190, 14);

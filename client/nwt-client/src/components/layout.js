@@ -16,13 +16,7 @@ const Layout = ({children}) => {
             </div>
 
             <div className="main">
-                {children}
-                <div className="element">  </div> 
-                <div className="element">  </div> 
-                <div className="element">  </div> 
-                <div className="element">  </div> 
-                <div className="element">  </div> 
-                              
+                {children}                                       
             </div>
             <div className="aside">
 

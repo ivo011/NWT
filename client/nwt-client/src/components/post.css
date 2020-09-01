@@ -1,0 +1,19 @@
+.post{
+    width:60%; 
+    height:500px; 
+    border: 1px solid black;
+    margin: 10px auto;
+}
+
+.post-header{
+    border: 1px solid white;
+    height:10%;
+}
+.post-picture{
+    border: 1px solid black;
+    height:70%;
+}
+.post-icons{
+    border: 1px solid green;
+    height:20%;
+}
