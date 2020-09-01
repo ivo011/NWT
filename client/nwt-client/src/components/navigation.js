@@ -1,6 +1,8 @@
 import React from 'react';
 import './navigation.css';
 import { Link } from 'react-router-dom'; 
+import { AiOutlineHome, AiOutlineMessage, AiOutlineExclamationCircle } from "react-icons/ai";
+import { IoIosNotificationsOutline } from "react-icons/io";
 
 const Navigation = () => {
 
@@ -8,10 +10,30 @@ const Navigation = () => {
         <nav> 
             <h3>NWT_projekt</h3>
             <ul className="nav-links">
-                <Link to="/"> <li>Home</li> </Link>
-                <Link to="/notifications"> <li>Notifications</li> </Link>
-                <Link to="/messages"> <li>Messages</li> </Link>
-                <Link to="/about"> <li>About</li> </Link>                  
+                <Link to="/">
+                    <div className="link">
+                        <AiOutlineHome size="2rem"/>
+                        <li>Home</li>
+                    </div>
+                </Link>
+                <Link to="/notifications">
+                    <div className="link">
+                        <IoIosNotificationsOutline size="2rem"/>
+                        <li>Notifications</li>
+                     </div>
+                </Link>
+                <Link to="/messages">
+                    <div className="link">
+                        <AiOutlineMessage size="2rem"/>
+                        <li>Messages</li>
+                     </div>
+                </Link>
+                <Link to="/about">
+                    <div className="link">
+                        <AiOutlineExclamationCircle size="2rem"/>
+                        <li>About</li>
+                     </div>
+                </Link>                  
             </ul>
         </nav>
 

@@ -15,12 +15,17 @@ nav{
     align-items: center;
     list-style: none;     
 }
+.link{
+    display:flex;
+    align-items: center;
+}
 
 a{
     text-decoration: none;
     font-size: 1em;
     font-weight: 700; 
     color:black;
+   
 }
 
 a:hover { 
@@ -33,4 +38,8 @@ a:hover {
 ul{
     margin:0; 
     padding: 0; 
+}
+
+li{
+    margin-left: 10px;
 }
