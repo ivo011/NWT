@@ -4,8 +4,15 @@
     border-radius: 10px; 
     box-shadow: 0px 5px 20px rgb(94, 94, 94);
     background-color: white;
+}
+@media screen and (max-width: 580px) {
+    .post{
+        max-width: 90%;
+    }
 
 }
+
+
 .user-details{
     padding:5px;
     height: 100%;
