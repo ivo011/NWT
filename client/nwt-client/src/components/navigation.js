@@ -2,7 +2,7 @@ import React from 'react';
 import './navigation.css';
 import { Link } from 'react-router-dom'; 
 import { AiOutlineHome, AiOutlineMessage, AiOutlineExclamationCircle } from "react-icons/ai";
-import { IoIosNotificationsOutline } from "react-icons/io";
+import { IoMdNotificationsOutline } from "react-icons/io";
 
 const Navigation = () => {
 
@@ -18,7 +18,7 @@ const Navigation = () => {
                 </Link>
                 <Link to="/notifications">
                     <div className="link">
-                        <IoIosNotificationsOutline size="2rem"/>
+                        <IoMdNotificationsOutline size="2rem"/>
                         <li>Notifications</li>
                      </div>
                 </Link>

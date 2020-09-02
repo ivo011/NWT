@@ -1,6 +1,7 @@
 import React from "react"; 
 import "./layout.css"
 import Navigation from './navigation'; 
+import Aside from './aside';
 
 
 const Layout = ({children}) => {
@@ -19,7 +20,7 @@ const Layout = ({children}) => {
                 {children}                                       
             </div>
             <div className="aside">
-
+                <Aside />
             </div>
             
             <div className="footer">

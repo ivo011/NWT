@@ -7,10 +7,10 @@ function Home() {
     <div className="Home">   
     <Layout>
       <h1>Home</h1>
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      <Post src="pic/pic1.jpg" profilesrc="pic/profile1.png"/>
+      <Post src="pic/pic2.jpg"/>
+      <Post src="pic/pic3.jpg"/>
+      <Post src="pic/pic4.jpg"/>
     </Layout>                
     </div>
   );
