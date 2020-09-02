@@ -23,7 +23,18 @@ const Aside = () => {
                 <div className="suggestion">
                    <img src="/pic/profile1.png" alt=""/>
                    <h3>Username</h3>
-                </div>                
+                </div>                              
+            </div>
+
+
+            <div className="trends">
+                <h2>Trends for you</h2>
+                <div className="trend">                   
+                    <h3>Username</h3>
+                </div>
+                <div className="trend">                   
+                    <h3>Username</h3>
+                </div>                                
             </div>
 
         </div>
