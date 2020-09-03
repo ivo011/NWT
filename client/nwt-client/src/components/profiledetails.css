@@ -1,0 +1,37 @@
+.profile-details{
+    border-radius: 10px; 
+    box-shadow: 0px 5px 20px rgb(94, 94, 94);
+    background-color: white;
+    max-width:60%;     
+    border: 1px solid green; 
+    margin: 10px auto;
+}
+.cover-photo{
+    max-width: 100%;    
+}
+
+.cover-photo img{
+    max-width: 100%;        
+    border-radius: 10px;
+    display:block;
+    margin: 0 auto;
+}
+.user-info{
+    
+    padding: 5px;    
+}
+.left{
+    display:flex; 
+    align-items: center;
+}
+.pic-name{
+    width:100%; 
+    display:flex;
+    justify-content: space-between;
+    align-items: center;     
+}
+.pic-name img{
+    max-width: 80px;    
+    border-radius: 100%;
+    margin-right: 10px;
+}

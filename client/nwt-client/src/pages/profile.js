@@ -1,14 +1,23 @@
 import React from 'react';
 import Layout from '../components/layout';
-
+import './profile.css'
+import Profiledetails from '../components/profiledetails'; 
+import ProfileAbout from '../components/profileAbout';
+import ProfilePictures from '../components/profilePictures';
+import Post from '../components/post';
 
 function Profile() {
   return (
     <div className="Profile">   
-    <Layout>
-      <h1>Profile</h1>
-       <div className="cover-photo"></div> 
-       <div className="profile-details"></div>
+    <Layout>      
+      <Profiledetails/>
+      <div className="info">
+        <ProfileAbout/>
+        <ProfilePictures/>
+      </div>
+      <Post src="pic/pic5.jpg" profilesrc="pic/profile1.png"/>
+      <Post src="pic/pic3.jpg"/>
+      <Post src="pic/pic4.jpg"/>
     </Layout>                
     </div>
   );

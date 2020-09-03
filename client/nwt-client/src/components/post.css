@@ -32,14 +32,12 @@ p{
     height: 100%;
     width: 3rem;    
 }
-.details-picture img{
-    
+.details-picture img{    
     max-width: 100%;    
     border-radius: 100%;
 }
 
-.post-header{
-    
+.post-header{    
     height:10%;
 }
 .post-picture{    
