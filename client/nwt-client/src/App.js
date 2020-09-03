@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Home from './pages/home'; 
+import Profile from './pages/profile'; 
 import About from './pages/about'; 
 import Messages from './pages/messages'; 
 import Notifications from './pages/notifications'; 
@@ -12,6 +13,7 @@ function App() {
       <div className="App">  
         <Switch>
           <Route path="/" exact component={ Home } /> 
+          <Route path="/profile" component={ Profile } /> 
           <Route path="/about" component={ About } /> 
           <Route path="/messages" component={ Messages } /> 
           <Route path="/notifications" component={ Notifications } /> 

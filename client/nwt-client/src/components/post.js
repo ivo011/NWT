@@ -14,7 +14,7 @@ const Post = ({src, profilesrc}) => {
                 <p>Sed ut perspiciatisstrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
             </div>
             <div className="post-picture">
-                <img className="post-pic" alt="desc" src={src}/>
+                { (src === undefined) ? <div></div> : <img className="post-pic" alt="desc" src={src}/> }                            
             </div>
             <div className="post-icons">
                 <div className="left">

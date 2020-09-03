@@ -1,7 +1,7 @@
 import React from 'react';
 import './navigation.css';
 import { Link } from 'react-router-dom'; 
-import { AiOutlineHome, AiOutlineMessage, AiOutlineExclamationCircle } from "react-icons/ai";
+import { AiOutlineHome, AiOutlineMessage, AiOutlineExclamationCircle, AiOutlineUser } from "react-icons/ai";
 import { IoMdNotificationsOutline } from "react-icons/io";
 
 const Navigation = () => {
@@ -15,6 +15,12 @@ const Navigation = () => {
                         <AiOutlineHome size="2rem"/>
                         <li>Home</li>
                     </div>
+                </Link>
+                <Link to="/profile">
+                    <div className="link">
+                        <AiOutlineUser size="2rem"/>
+                        <li>Profile</li>
+                     </div>
                 </Link>
                 <Link to="/notifications">
                     <div className="link">
