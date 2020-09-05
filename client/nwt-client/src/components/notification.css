@@ -1,0 +1,21 @@
+.notification{
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    padding:5px;
+    position: relative;
+}
+.notification img{
+    max-width: 50px;    
+    border-radius: 100%;
+}
+
+.notification svg {
+    position: absolute;
+    top: -0.10em;
+    right: -0.10em;
+}
+
+.notifi-content{
+    display:flex;
+    align-items: center;
+}
