@@ -14,7 +14,7 @@ function Home() {
       <Post picturesrc="pic/pic2.jpg"/>    
       <Post picturesrc="pic/pic5.jpg" profilesrc="pic/profile1.png"/>
       <Post picturesrc="pic/pic3.jpg"/>
-      <Post picturesrc="pic/pic4.jpg"/>
+      <Post picturesrc="pic/loma.jpg"/>
     </Layout>                
     </div>
   );

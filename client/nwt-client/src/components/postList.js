@@ -20,7 +20,8 @@ const PostList = () => {
             {posts.map(post => { 
                 return(
                     <div key={post.post_id}>
-                        <Post text={post.text} />
+                        <Post text={post.text} picturesrc={post.picture}/>  
+                        {console.log(post.picture)}                      
                     </div> 
                 )
             })}

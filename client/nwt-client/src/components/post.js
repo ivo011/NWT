@@ -15,7 +15,7 @@ const Post = ({picturesrc, profilesrc, text}) => {
                 <p>{text}</p>
             </div>
             <div className="post-picture">
-                { (picturesrc === undefined) ? <div></div> : <img className="post-pic" alt="desc" src={picturesrc}/> }                            
+                { (picturesrc === null ) ? <div></div> : <img className="post-pic" alt="desc" src={picturesrc}/> }                            
             </div>
             <div className="post-icons">
                 <div className="left">
