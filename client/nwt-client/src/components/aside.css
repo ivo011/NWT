@@ -1,4 +1,4 @@
-h2, h3{
+h3, h4{
     margin: 0; 
     padding: 0; 
 }
@@ -33,7 +33,7 @@ h2, h3{
     background-color: white;
     
 }
-.suggestions h2{
+.suggestions h3{
     padding:5px;
     text-align: center;
     border-bottom: 1px solid rgb(94, 94, 94);
@@ -57,7 +57,7 @@ h2, h3{
     background-color: white;  
 }
 
-.trends h2{
+.trends h3{
     padding:5px;
     text-align: center;
     border-bottom: 1px solid rgb(94, 94, 94);

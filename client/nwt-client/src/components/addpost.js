@@ -1,7 +1,7 @@
 import React from 'react';
 import './addpost.css';
 import { Button, FormGroup, Input } from 'reactstrap';
-import { AiOutlinePicture, AiOutlineFileGif, AiOutlineSmile } from "react-icons/ai";
+import { AiOutlinePicture, AiOutlineSmile } from "react-icons/ai";
 
 
 const AddPost = () => {
@@ -15,8 +15,7 @@ const AddPost = () => {
             </div>
             <div className="addPostIcons">
                 <div className="icons">
-                    <AiOutlinePicture size="2em"/>
-                    <AiOutlineFileGif size="2em"/>
+                    <AiOutlinePicture size="2em"/>                    
                     <AiOutlineSmile size="2em"/>
                 </div>
                 <Button color="primary">Post</Button>

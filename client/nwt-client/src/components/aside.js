@@ -11,29 +11,29 @@ const Aside = () => {
             </div>
 
             <div className="suggestions">
-                <h2>Who to follow</h2>
+                <h3>Who to follow</h3>
                 <div className="suggestion">
                     <img src="/pic/profile1.png" alt=""/>
-                    <h3>Username</h3>
+                    <h4>Username</h4>
                 </div>
                 <div className="suggestion">
                     <img src="/pic/profile1.png" alt=""/>
-                    <h3>Username</h3>
+                    <h4>Username</h4>
                 </div>
                 <div className="suggestion">
                    <img src="/pic/profile1.png" alt=""/>
-                   <h3>Username</h3>
+                   <h4>Username</h4>
                 </div>                              
             </div>
 
 
             <div className="trends">
-                <h2>Trends for you</h2>
+                <h3>Trends for you</h3>
                 <div className="trend">                   
-                    <h3>Username</h3>
+                    <h4>Username</h4>
                 </div>
                 <div className="trend">                   
-                    <h3>Username</h3>
+                    <h4>Username</h4>
                 </div>                                
             </div>
 
