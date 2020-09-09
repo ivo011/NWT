@@ -1,6 +1,10 @@
 export default (sequelize, DataTypes) => {
     const Like = sequelize.define('like', {
-
+        like_id:{
+            type: DataTypes.INTEGER,
+            autoIncrement:true, 
+            primaryKey: true
+        }
     });
 
     Like.associate = (models) => {

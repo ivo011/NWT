@@ -2,11 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser'); 
 const router = express.Router(); 
 const models  = require('../models');
+const cors = require('cors'); 
 const verify = require('../config/verifyToken');
 
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
+
+router.use(cors());
 
 //Privatna ruta...
 router.get('/', (req, res) => {
@@ -18,7 +21,8 @@ router.get('/', (req, res) => {
 
   router.post('/create', (req, res) => {
     models.Post.create({
-      text: req.body.text,       
+      text: req.body.text,
+      picture: req.body.picture,       
     }).then(() => {
       res.send('Post Created!');
     });

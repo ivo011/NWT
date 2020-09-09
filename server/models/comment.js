@@ -1,5 +1,10 @@
 export default (sequelize, DataTypes) => {
     const Comment = sequelize.define('comment', {
+        comment_id:{
+            type: DataTypes.INTEGER,
+            autoIncrement:true, 
+            primaryKey: true
+        },
         text: {
             type: DataTypes.TEXT,
             unique: true,

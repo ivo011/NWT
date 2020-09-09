@@ -1,12 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const passport = require('passport');
 const session = require('express-session');
 const flash = require('express-flash');
 const models = require('./models');
-
-const initializePassport = require('./config/passport-config');
-initializePassport(passport)
+const cors = require('cors');
 
 const app = express();
 app.set('view-engine', 'ejs')
@@ -18,9 +15,6 @@ app.use(session({secret: "secret",
     saveUninitialized: false
 })); 
 
-//Passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -35,6 +29,8 @@ const postsRoute = require('./routes/posts');
 app.use("/", homeRoute); 
 app.use("/users", usersRoute);
 app.use("/posts", postsRoute); 
+
+app.use(cors());
 
 app.use(flash())
 
