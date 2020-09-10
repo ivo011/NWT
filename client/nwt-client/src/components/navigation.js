@@ -10,7 +10,7 @@ const Navigation = () => {
         <nav> 
             <h3>NWT_projekt</h3>
             <ul className="nav-links">
-                <Link to="/">
+                <Link to="/home">
                     <div className="link">
                         <AiOutlineHome size="2rem"/>
                         <li>Home</li>
