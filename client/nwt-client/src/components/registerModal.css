@@ -1,0 +1,14 @@
+.profilepic{
+    max-width: 150px;    
+    border-radius: 50%;
+}
+.ModalBody{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 450px;
+}
+.input-picture{
+    display:flex;
+    align-items: center;
+}
