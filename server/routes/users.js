@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken'); 
+const cors = require('cors'); 
 const models = require('../models');
 const {registerValidation, LoginValidation} = require('../config/validation');
 const router = express.Router();
@@ -11,6 +12,7 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({
     extended: true
 }));
+router.use(cors());
 
 
 //USER REGISTER
