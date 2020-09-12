@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './registerModal.css'
+import axios from 'axios'; 
 import { Button, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const RegisterModal = ({modal, toggle}) => {
@@ -13,8 +14,21 @@ const RegisterModal = ({modal, toggle}) => {
 
     const [profilepic, setProfilepic] = useState("/pic/default.png");
 
-    const onChange = e =>{            
+    const onChange = (e) =>{            
         setProfilepic("/pic/" + e.target.files[0].name);        
+    }
+
+    const handleSubmit = (e) => {
+        console.log(username, email, password, age, profilepic);
+        axios.post('http://localhost:5000/users/register',{
+            username, 
+            email, 
+            password, 
+            age, 
+            avatar: profilepic
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log(err)); 
     }
 
     return ( 
@@ -32,7 +46,7 @@ const RegisterModal = ({modal, toggle}) => {
                         </div>                                                   
                     </ModalBody>
                 <ModalFooter>
-                        <Button color="primary" onClick={toggle}>Confirm</Button>{' '}
+                        <Button color="primary" onClick={()=> {toggle(); handleSubmit();}}>Confirm</Button>{' '}
                         <Button color="secondary" onClick={toggle}>Cancel</Button>
                 </ModalFooter>
             </Modal>        
