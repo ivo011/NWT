@@ -19,7 +19,7 @@ const RegisterModal = ({modal, toggle}) => {
     }
 
     const handleSubmit = (e) => {
-        console.log(username, email, password, age, profilepic);
+        
         axios.post('http://localhost:5000/users/register',{
             username, 
             email, 
@@ -27,7 +27,15 @@ const RegisterModal = ({modal, toggle}) => {
             age, 
             avatar: profilepic
         })
-        .then(res => console.log(res))
+        .then(res => {
+            console.log(res); 
+            setUsername(""); 
+            setEmail(""); 
+            setPassword(""); 
+            setAge(""); 
+            setProfilepic("/pic/default.png");
+        }
+        )
         .catch(err => console.log(err)); 
     }
 

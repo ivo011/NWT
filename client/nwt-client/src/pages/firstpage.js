@@ -1,12 +1,35 @@
 import React, {useState} from 'react';
 import '../components/firstpage.css'
+import axios from 'axios'; 
 import { Button, Input } from 'reactstrap';
 import RegisterModal from '../components/registerModal';
 
-const Firstpage = () => {    
+const Firstpage = (props) => { 
+    
 
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
+
+    const [email, setEmail] = useState(""); 
+    const [password, setPassword] = useState(""); 
+
+    const handleLogin = (e) =>{
+        console.log(email, password);   
+         axios.post("http://localhost:5000/users/login", {
+             email, 
+             password
+         })
+         .then(res =>{
+             console.log(res); 
+             console.log(res.data.Success)
+             if(res.data.Success) props.history.push('/home')
+         })         
+         .catch(err => console.log(err));         
+         setEmail(""); 
+         setPassword("");          
+         
+               
+    }
    
     return (
          <div className="first-page">
@@ -16,12 +39,13 @@ const Firstpage = () => {
                     <h4>NodeJS | React | PostgreSQL | Express | Javascript </h4>                    
                 </div>
                
-                <div className="side">   
+                <div className="side"> 
                     <div className="log-in">    
-                        <Input type="email" name="email" autoComplete="off" id="exampleEmail" placeholder="Enter email" />                                                    
-                        <Input type="password" name="password" id="examplePassword" placeholder="Enter password" />  
-                        <Button className="login-button" color="primary">Log in</Button>               
+                        <Input type="email"  value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="off" placeholder="Enter email" />                                                    
+                        <Input type="password"  value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter password" />  
+                        <Button className="login-button" color="primary" onClick={handleLogin}>Log in</Button>               
                     </div>
+              
                     <div className="register">                        
                         <h4>You don't have an account?</h4>
                         <Button className="register-button" onClick={toggle} color="success">Register</Button>
