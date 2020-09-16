@@ -11,17 +11,19 @@ const Firstpage = (props) => {
     const toggle = () => setModal(!modal);
 
     const [email, setEmail] = useState(""); 
-    const [password, setPassword] = useState(""); 
+    const [password, setPassword] = useState("");  
 
     const handleLogin = (e) =>{
+        e.preventDefault();
         console.log(email, password);   
          axios.post("http://localhost:5000/users/login", {
              email, 
              password
          })
          .then(res =>{
-             console.log(res); 
-             console.log(res.data.Success)
+             console.log(res);     
+             localStorage.setItem("token", JSON.stringify(res.data)); //spremanje u localstorage         
+             console.log(res.data.Success)             
              if(res.data.Success) props.history.push('/home')
          })         
          .catch(err => console.log(err));         

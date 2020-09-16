@@ -6,6 +6,7 @@ import Profile from './pages/profile';
 import About from './pages/about'; 
 import Messages from './pages/messages'; 
 import Notifications from './pages/notifications'; 
+import ProtectedRoute from './components/protectedRoute'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <div className="App">  
         <Switch>
           <Route path="/" exact component={ Firstpage } /> 
-          <Route path="/home" exact component={ Home } /> 
+          <ProtectedRoute path="/home" exact component={ Home } /> 
           <Route path="/profile" component={ Profile } /> 
           <Route path="/about" component={ About } /> 
           <Route path="/messages" component={ Messages } /> 
