@@ -1,13 +1,31 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './aside.css';
+import axios from 'axios'; 
 
 
 const Aside = () => {
-    return ( 
+
+    const [user, setUser] = useState({username: " ", profilepic: " "});
+
+    useEffect(() => {
+       
+        axios.get('http://localhost:5000/users/user', {
+            headers:{
+                auth_token: localStorage.getItem("token")                 
+            }
+        }).then(res =>{         
+                console.log(res.data)       
+                setUser({username: res.data.username, profilepic: res.data.avatar});   
+                                              
+            })
+            .catch(err => console.log(err))
+    }, []);
+    
+    return (         
         <div className="side-container">
             <div className="userProfile">
-                <img src="/pic/profile1.png" alt=""/>
-                <h3>Username</h3>
+                <img src={user.profilepic} alt=""/>
+            <h3>{user.username}</h3>
             </div>
 
             <div className="suggestions">

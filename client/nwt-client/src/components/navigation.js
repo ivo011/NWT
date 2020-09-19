@@ -3,6 +3,7 @@ import './navigation.css';
 import { Link } from 'react-router-dom'; 
 import { AiOutlineHome, AiOutlineMessage, AiOutlineExclamationCircle, AiOutlineUser } from "react-icons/ai";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import Logout from './logout'; 
 
 const Navigation = () => {
 
@@ -39,8 +40,9 @@ const Navigation = () => {
                         <AiOutlineExclamationCircle size="2rem"/>
                         <li>About</li>
                      </div>
-                </Link>                  
-            </ul>
+                </Link>  
+                <Logout/>                          
+            </ul>            
         </nav>
 
       );

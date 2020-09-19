@@ -14,16 +14,13 @@ const Firstpage = (props) => {
     const [password, setPassword] = useState("");  
 
     const handleLogin = (e) =>{
-        e.preventDefault();
-        console.log(email, password);   
+        e.preventDefault();        
          axios.post("http://localhost:5000/users/login", {
              email, 
              password
          })
-         .then(res =>{
-             console.log(res);     
-             localStorage.setItem("token", JSON.stringify(res.data)); //spremanje u localstorage         
-             console.log(res.data.Success)             
+         .then(res =>{                
+             localStorage.setItem("token", JSON.stringify(res.data)); //spremanje u localstorage                          
              if(res.data.Success) props.history.push('/home')
          })         
          .catch(err => console.log(err));         

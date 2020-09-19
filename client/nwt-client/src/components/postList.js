@@ -8,9 +8,8 @@ const PostList = () => {
 
     useEffect(() => {
         axios.get('http://localhost:5000/posts')
-            .then(res =>{
-                console.log(res);
-                setPosts(res.data);
+            .then(res =>{                
+                setPosts(res.data);                   
             })
             .catch(err => console.log(err))
     }, []);
@@ -21,7 +20,7 @@ const PostList = () => {
                 return(
                     <div key={post.post_id}>
                         <Post text={post.text} picturesrc={post.picture}/>  
-                        {console.log(post.picture)}                      
+                                             
                     </div> 
                 )
             })}
