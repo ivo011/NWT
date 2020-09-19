@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser'); 
 const router = express.Router(); 
 const models  = require('../models');
+const jwt = require('jsonwebtoken');
 const cors = require('cors'); 
 const verify = require('../config/verifyToken');
 
@@ -19,10 +20,13 @@ router.get('/', (req, res) => {
     })
 });
 
-  router.post('/create', (req, res) => {
+  router.post('/create', (req, res) => {    
+    const auth_token = JSON.parse(req.header('auth_token'));       
+    const decoded = jwt.verify(auth_token.token, "secret");   
     models.Post.create({
       text: req.body.text,
-      picture: req.body.picture,       
+      picture: req.body.picture,  
+      user_id: decoded.userId
     }).then(() => {
       res.send('Post Created!');
     });
