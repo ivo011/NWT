@@ -17,10 +17,6 @@ router.use(cors());
 
 //USER REGISTER
 
-router.get('/register', (req, res) => {
-    res.render('register.ejs')
-  })
-
 
 router.post('/register', async (req, res) => {
     
@@ -52,9 +48,6 @@ router.post('/register', async (req, res) => {
 });
 
 //USER LOGIN
- router.get('/login', (req, res) => {
-        res.render('login.ejs')
-      })
 
 router.post('/login', async (req, res) => {
 
@@ -71,12 +64,33 @@ router.post('/login', async (req, res) => {
     if(!validPassword) return res.status(400).send("Invalid password !!");
      
     //TOKEN
-    const token =  jwt.sign({id: user.id}, "secret"); 
-    // res.json({ token:token });
-    res.header('auth_token', token).send(token);    
+    const token =  jwt.sign({email: user.email, userId: user.user_id}, "secret", {expiresIn: "1h"}); 
+    return res.status(200).json({ token:token, Success:true});
+    // res.header('auth_token', token).send(token);    
 
 }); 
       
+//GET USER 
+
+router.get('/user', (req, res) => {
+
+    try{
+        const auth_token = JSON.parse(req.header('auth_token'));     
+        const decoded = jwt.verify(auth_token.token, "secret"); 
+         models.User.findOne({
+        where:{
+            user_id: decoded.userId
+        }
+    }).then((user)=>{        
+        res.send(user);
+    })
+    } catch (error){
+        res.status(400).send(error);
+    }
+    
+})
+
+
 //DELETE USER
 
 router.delete('/delete/:id', (req, res) => {
