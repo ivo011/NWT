@@ -8,21 +8,25 @@ import Messages from './pages/messages';
 import Notifications from './pages/notifications'; 
 import ProtectedRoute from './components/protectedRoute'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
+import {UserProvider} from './context/UserContext'; 
 
 function App() {
-  return (
+  return (  
     <Router>
-      <div className="App">  
-        <Switch>
-          <Route path="/" exact component={ Firstpage } /> 
-          <ProtectedRoute path="/home" exact component={ Home } /> 
-          <Route path="/profile" component={ Profile } /> 
-          <Route path="/about" component={ About } /> 
-          <Route path="/messages" component={ Messages } /> 
-          <Route path="/notifications" component={ Notifications } /> 
-        </Switch>             
-      </div>  
-    </Router>
+      <UserProvider>      
+        <div className="App">  
+          <Switch>
+            <Route path="/" exact component={ Firstpage } /> 
+            <ProtectedRoute path="/home" exact component={ Home } /> 
+            <Route path="/profile" component={ Profile } /> 
+            <Route path="/about" component={ About } /> 
+            <Route path="/messages" component={ Messages } /> 
+            <Route path="/notifications" component={ Notifications } /> 
+          </Switch>             
+        </div> 
+      </UserProvider>      
+    </Router> 
+    
   );
 }
 

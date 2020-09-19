@@ -25,9 +25,7 @@ const Firstpage = (props) => {
          })         
          .catch(err => console.log(err));         
          setEmail(""); 
-         setPassword("");          
-         
-               
+         setPassword("");                        
     }
    
     return (

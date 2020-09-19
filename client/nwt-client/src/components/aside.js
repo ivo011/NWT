@@ -1,31 +1,17 @@
-import React, {useState, useEffect} from 'react';
+import React, {useContext} from 'react';
 import './aside.css';
-import axios from 'axios'; 
+import {UserContext} from '../context/UserContext'; 
 
 
 const Aside = () => {
 
-    const [user, setUser] = useState({username: " ", profilepic: " "});
-
-    useEffect(() => {
-       
-        axios.get('http://localhost:5000/users/user', {
-            headers:{
-                auth_token: localStorage.getItem("token")                 
-            }
-        }).then(res =>{         
-                console.log(res.data)       
-                setUser({username: res.data.username, profilepic: res.data.avatar});   
-                                              
-            })
-            .catch(err => console.log(err))
-    }, []);
+    const user = useContext(UserContext);     
     
     return (         
         <div className="side-container">
             <div className="userProfile">
-                <img src={user.profilepic} alt=""/>
-            <h3>{user.username}</h3>
+                <img src={user[0].profilepic} alt=""/>
+                 <h3>{user[0].username}</h3> 
             </div>
 
             <div className="suggestions">
