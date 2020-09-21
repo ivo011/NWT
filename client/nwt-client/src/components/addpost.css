@@ -12,6 +12,7 @@
     }
 
 }
+
 .addPostHeader{
     height: 100%;
     padding:5px;
@@ -39,5 +40,16 @@
 .icons{
     width:35%;
     display: flex; 
-    justify-content: space-around;
+    justify-content: space-around; 
+}
+
+.icons input[type="file"]{
+    display:none;
+}
+
+.pictureIcon{
+    cursor: pointer;
+}
+.postImg{
+    max-width: 30%;
 }
