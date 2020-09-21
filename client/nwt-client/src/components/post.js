@@ -4,13 +4,13 @@ import { AiOutlineLike, AiOutlineShareAlt} from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
 
 
-const Post = ({picturesrc, profilesrc, text}) => {
+const Post = ({picturesrc, profilesrc, text, username}) => {
     return ( 
         <div className="post">
             <div className="post-header">
                 <div className="user-details">
                     <div className="details-picture"><img className="post-profile-pic" alt="" src={profilesrc}/></div>
-                    <h3>Username</h3>
+                    <h3>{username}</h3>
                 </div>
                 <p>{text}</p>
             </div>

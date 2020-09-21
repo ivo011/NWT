@@ -7,7 +7,8 @@ import {UserContext} from '../context/UserContext';
 
 
 const AddPost = () => {
-    const user = useContext(UserContext);    
+
+    const {user} = useContext(UserContext);    
     
     const[postText, setPostText] = useState(""); 
     const[postPicture, setPostPicture]=useState(null);     
@@ -33,7 +34,7 @@ const AddPost = () => {
         <div className="addPost">
             <div className="addPostHeader">
                 <FormGroup className="addPostFormGroup">     
-                    <img src={user[0].profilepic} alt=""/>               
+                    <img src={user.profilepic} alt=""/>               
                     <Input type="textarea" name="text" id="exampleText" onChange = {e => setPostText(e.target.value)} />                    
                 </FormGroup>
             </div>

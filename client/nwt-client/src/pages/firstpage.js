@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import '../components/firstpage.css'
 import axios from 'axios'; 
 import { Button, Input } from 'reactstrap';
 import RegisterModal from '../components/registerModal';
+import { UserContext } from '../context/UserContext'; 
+
 
 const Firstpage = (props) => { 
     
@@ -11,8 +13,10 @@ const Firstpage = (props) => {
     const toggle = () => setModal(!modal);
 
     const [email, setEmail] = useState(""); 
-    const [password, setPassword] = useState("");  
-
+    const [password, setPassword] = useState("");     
+    
+    const {toggleLogin} = useContext(UserContext);
+   
     const handleLogin = (e) =>{
         e.preventDefault();        
          axios.post("http://localhost:5000/users/login", {
@@ -20,7 +24,8 @@ const Firstpage = (props) => {
              password
          })
          .then(res =>{                
-             localStorage.setItem("token", JSON.stringify(res.data)); //spremanje u localstorage                          
+             localStorage.setItem("token", JSON.stringify(res.data)); //spremanje u localstorage           
+             toggleLogin();
              if(res.data.Success) props.history.push('/home')
          })         
          .catch(err => console.log(err));         

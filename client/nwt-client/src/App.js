@@ -10,20 +10,21 @@ import ProtectedRoute from './components/protectedRoute';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 import {UserProvider} from './context/UserContext'; 
 
+
 function App() {
   return (  
     <Router>
-      <UserProvider>      
-        <div className="App">  
-          <Switch>
-            <Route path="/" exact component={ Firstpage } /> 
-            <ProtectedRoute path="/home" exact component={ Home } /> 
-            <Route path="/profile" component={ Profile } /> 
-            <Route path="/about" component={ About } /> 
-            <Route path="/messages" component={ Messages } /> 
-            <Route path="/notifications" component={ Notifications } /> 
-          </Switch>             
-        </div> 
+      <UserProvider>         
+          <div className="App">  
+            <Switch>
+              <Route path="/" exact component={ Firstpage } /> 
+              <ProtectedRoute path="/home" exact component={ Home } /> 
+              <Route path="/profile" component={ Profile } /> 
+              <Route path="/about" component={ About } /> 
+              <Route path="/messages" component={ Messages } /> 
+              <Route path="/notifications" component={ Notifications } /> 
+            </Switch>             
+          </div>         
       </UserProvider>      
     </Router> 
     

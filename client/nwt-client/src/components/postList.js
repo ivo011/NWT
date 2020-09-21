@@ -5,22 +5,23 @@ import axios from 'axios';
 const PostList = () => {
 
     const [posts, setPosts] = useState([])
+      
 
     useEffect(() => {
         axios.get('http://localhost:5000/posts')
-            .then(res =>{                
+            .then(res =>{     
+                console.log(res);          
                 setPosts(res.data);                   
             })
             .catch(err => console.log(err))
-    }, []);
+    },[]);
 
     return ( 
         <div>
             {posts.map(post => { 
                 return(
                     <div key={post.post_id}>
-                        <Post text={post.text} picturesrc={post.picture}/>  
-                                             
+                        <Post text={post.text} picturesrc={post.picture} username={post.user.username} profilesrc={post.user.avatar}/>                                               
                     </div> 
                 )
             })}

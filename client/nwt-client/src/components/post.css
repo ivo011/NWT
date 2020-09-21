@@ -27,8 +27,7 @@ p{
     margin: 10px;   
     padding: 0;
 }
-.details-picture{   
-    background-color: black;
+.details-picture{       
     height: 100%;
     width: 3rem;    
 }

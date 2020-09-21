@@ -5,13 +5,14 @@ import {UserContext} from '../context/UserContext';
 
 const Aside = () => {
 
-    const user = useContext(UserContext);     
+    const {user} = useContext(UserContext);  
+    console.log("Aside: -->", user.username)
     
     return (         
         <div className="side-container">
             <div className="userProfile">
-                <img src={user[0].profilepic} alt=""/>
-                 <h3>{user[0].username}</h3> 
+                 <img src={user.profilepic} alt=""/>
+                 <h3>{user.username}</h3> 
             </div>
 
             <div className="suggestions">
