@@ -12,9 +12,14 @@ router.use(bodyParser.urlencoded({ extended: true }));
 
 router.use(cors());
 
-//Privatna ruta...
+
 router.get('/', (req, res) => {
-    models.Post.findAll()
+    models.Post.findAll({
+      order: [
+        ['createdAt', 'DESC']       
+    ], 
+    include:[models.User]
+    })
     .then((posts)=>{
         res.send(posts);
     })

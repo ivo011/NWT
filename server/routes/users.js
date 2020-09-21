@@ -77,7 +77,9 @@ router.get('/user', (req, res) => {
     try{
         const auth_token = JSON.parse(req.header('auth_token'));     
         const decoded = jwt.verify(auth_token.token, "secret"); 
-         models.User.findOne({
+        console.log(decoded)
+        console.log("OGET USER...................................")
+        models.User.findOne({
         where:{
             user_id: decoded.userId
         }
