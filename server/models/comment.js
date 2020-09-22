@@ -6,8 +6,7 @@ export default (sequelize, DataTypes) => {
             primaryKey: true
         },
         text: {
-            type: DataTypes.TEXT,
-            unique: true,
+            type: DataTypes.TEXT,           
         }       
     });
 

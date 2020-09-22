@@ -38,6 +38,19 @@ router.get('/', (req, res) => {
   });
 
 
+  router.put('/update/:id', (req, res) => {
+    models.Post.update(
+      {  text: req.body.text }, 
+      {        
+        where: { 
+          post_id: req.params.id 
+        }
+      }).then(() => {
+        
+        res.send("Post Updated!");
+    });
+})
+
   router.delete('/delete/:id', (req, res) => {
     models.Post.destroy({
         where: {

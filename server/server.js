@@ -24,11 +24,13 @@ app.use(bodyParser.urlencoded({
 //Routes
 const homeRoute = require('./routes');
 const usersRoute = require('./routes/users');
-const postsRoute = require('./routes/posts'); 
+const postsRoute = require('./routes/posts');
+const commentsRoute = require('./routes/comments')
 
 app.use("/", homeRoute); 
 app.use("/users", usersRoute);
 app.use("/posts", postsRoute); 
+app.use("/comments", commentsRoute);
 
 app.use(cors());
 
