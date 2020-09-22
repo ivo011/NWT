@@ -41,7 +41,7 @@ router.get('/', (req, res) => {
   router.delete('/delete/:id', (req, res) => {
     models.Post.destroy({
         where: {
-            id: req.params.id
+            post_id: req.params.id
         }
     }).then(() => {
         res.send("Post Deleted!");
