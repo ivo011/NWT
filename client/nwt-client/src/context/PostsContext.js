@@ -2,7 +2,6 @@ import React, {useState, createContext, useEffect } from 'react';
 import axios from 'axios'; 
 
 export const PostsContext = createContext();
-
 export const PostsProvider = ({children}) => {
 
 
@@ -20,15 +19,14 @@ export const PostsProvider = ({children}) => {
 
     useEffect(() => {
         axios.get('http://localhost:5000/posts')
-            .then(res =>{     
-                  
+            .then(res =>{                     
                 setPosts(res.data);                   
             })
             .catch(err => console.log(err))
     },[newPost, postDeleted]);   
 
     return (
-        <PostsContext.Provider value={{posts, toggleNewPost, toggleDeletePost}}>
+        <PostsContext.Provider value={{posts, toggleNewPost, toggleDeletePost, postDeleted}}>
             {children}
         </PostsContext.Provider>
     );

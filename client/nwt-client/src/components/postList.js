@@ -5,19 +5,7 @@ import {PostsContext} from '../context/PostsContext';
 
 const PostList = () => {
 
-    const {posts} = useContext(PostsContext);  
-
-    // const [posts, setPosts] = useState([])  
-
-    // useEffect(() => {
-    //     axios.get('http://localhost:5000/posts')
-    //         .then(res =>{     
-    //             console.log(res);          
-    //             setPosts(res.data);                   
-    //         })
-    //         .catch(err => console.log(err))
-    // },[]);
-  
+    const {posts} = useContext(PostsContext);    
 
     return ( 
         <div>
