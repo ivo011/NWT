@@ -23,8 +23,7 @@ export const UserProvider = ({children}) => {
             })
             .catch(err => console.log(err))
     }, [logedIn]);
-
-    console.log("User context: ", user)
+    
 
     return (
         <UserContext.Provider value={{user, toggleLogin}}>

@@ -6,7 +6,7 @@ import {UserContext} from '../context/UserContext';
 const Aside = () => {
 
     const {user} = useContext(UserContext);  
-    console.log("Aside: -->", user.username)
+   
     
     return (         
         <div className="side-container">

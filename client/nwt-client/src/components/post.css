@@ -37,7 +37,10 @@ p{
 }
 
 .post-header{    
-    height:10%;
+    height:10%;   
+    display:flex;
+    justify-content: space-between;
+    padding:5px;
 }
 .post-picture{    
     max-height:70%;
@@ -56,3 +59,4 @@ p{
 .post-icons svg{
     margin: 5px 10px;
 }
+

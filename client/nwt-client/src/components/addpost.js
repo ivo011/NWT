@@ -4,11 +4,17 @@ import axios from 'axios';
 import { Button, FormGroup, Input } from 'reactstrap';
 import { AiOutlinePicture, AiOutlineSmile } from "react-icons/ai";
 import {UserContext} from '../context/UserContext'; 
+import {PostsContext} from '../context/PostsContext'; 
+
 
 
 const AddPost = () => {
 
     const {user} = useContext(UserContext);    
+    const {posts} = useContext(PostsContext);  
+
+    const {toggleNewPost} = useContext(PostsContext);  
+
     
     const[postText, setPostText] = useState(""); 
     const[postPicture, setPostPicture]=useState(null);     
@@ -24,8 +30,8 @@ const AddPost = () => {
                 auth_token: localStorage.getItem("token")                   
             }
          })
-         .then(res =>{                
-            console.log(res);
+         .then(res =>{    
+            toggleNewPost();              
          })         
          .catch(err => console.log(err));   
          setPostText("");  
@@ -36,6 +42,7 @@ const AddPost = () => {
         setPostPicture("/pic/" + e.target.files[0].name);        
     }
 
+    
     return ( 
         <div className="addPost">
             <div className="addPostHeader">

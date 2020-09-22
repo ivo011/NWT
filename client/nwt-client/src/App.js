@@ -9,12 +9,14 @@ import Notifications from './pages/notifications';
 import ProtectedRoute from './components/protectedRoute'; 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 import {UserProvider} from './context/UserContext'; 
+import {PostsProvider} from './context/PostsContext';
 
 
 function App() {
   return (  
     <Router>
-      <UserProvider>         
+      <UserProvider>  
+        <PostsProvider>
           <div className="App">  
             <Switch>
               <Route path="/" exact component={ Firstpage } /> 
@@ -24,7 +26,8 @@ function App() {
               <Route path="/messages" component={ Messages } /> 
               <Route path="/notifications" component={ Notifications } /> 
             </Switch>             
-          </div>         
+          </div>
+        </PostsProvider>                
       </UserProvider>      
     </Router> 
     
