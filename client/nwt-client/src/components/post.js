@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react';
 import './post.css'
 import axios from 'axios'; 
 import { AiOutlineLike, AiOutlineShareAlt} from "react-icons/ai";
+import { Input } from 'reactstrap';
 import { FaRegComment } from "react-icons/fa";
 import { Dropdown } from 'react-bootstrap';
 import {PostsContext} from '../context/PostsContext'; 
@@ -10,6 +11,9 @@ import {PostsContext} from '../context/PostsContext';
 const Post = ({picturesrc, profilesrc, text, username, post_ID}) => {
     
     const [postID, setpostID] = useState(post_ID)
+    const [postText, setpostText] = useState(text)
+    const [editMode, seteditMode] = useState(false); 
+    const [editText, seteditText] = useState(text)
     const {toggleDeletePost} = useContext(PostsContext); 
 
     const handlePostDelete = () =>{
@@ -26,6 +30,17 @@ const Post = ({picturesrc, profilesrc, text, username, post_ID}) => {
         .catch(err => console.log(err));
     }
 
+    const handlePostEdit = () =>{
+        seteditMode(!editMode)
+    }
+
+    const handleEnter = (e) => {
+        if(e.keyCode == 13) {
+             seteditMode(!editMode)
+        }
+        setpostText(editText)
+    }
+
    
     return ( 
         <div className="post">
@@ -39,12 +54,16 @@ const Post = ({picturesrc, profilesrc, text, username, post_ID}) => {
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item href="#/action-1" onClick={handlePostDelete}>Delete</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">Edit</Dropdown.Item>
-                        
+                        <Dropdown.Item href="#/action-2" onClick={handlePostEdit}>Edit</Dropdown.Item>                        
                     </Dropdown.Menu>
                 </Dropdown>                          
             </div>
-            <p>{text}</p> 
+            { editMode ? <Input type="textarea" name="text"
+                                 value={editText} id="exampleText" 
+                                 onKeyDown={handleEnter}
+                                 onChange = {e => seteditText(e.target.value)} 
+                        /> 
+                        : <p>{postText}</p> }
             <div className="post-picture">
                 { (picturesrc === null ) ? <div></div> : <img className="post-pic" alt="desc" src={picturesrc}/> }                            
             </div>
