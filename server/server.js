@@ -6,7 +6,6 @@ const models = require('./models');
 const cors = require('cors');
 
 const app = express();
-app.set('view-engine', 'ejs')
 const port = process.env.PORT || 5000;
 
 //Express session
@@ -25,12 +24,14 @@ app.use(bodyParser.urlencoded({
 const homeRoute = require('./routes');
 const usersRoute = require('./routes/users');
 const postsRoute = require('./routes/posts');
-const commentsRoute = require('./routes/comments')
+const commentsRoute = require('./routes/comments');
+const likesRoute = require('./routes/likes');
 
 app.use("/", homeRoute); 
 app.use("/users", usersRoute);
 app.use("/posts", postsRoute); 
 app.use("/comments", commentsRoute);
+app.use("/likes", likesRoute); 
 
 app.use(cors());
 

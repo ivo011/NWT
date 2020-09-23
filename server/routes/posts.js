@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
       order: [
         ['createdAt', 'DESC']       
     ], 
-    include:[models.User]
+    include:[models.User, models.Like]
     })
     .then((posts)=>{
         res.send(posts);

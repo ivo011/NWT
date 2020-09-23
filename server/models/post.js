@@ -18,6 +18,9 @@ export default (sequelize, DataTypes) => {
         Post.belongsTo(models.User, {
             foreignKey: 'user_id'
         })
+        Post.hasMany(models.Like, {
+             foreignKey: 'post_id' 
+            });
     };
 
     return Post;
