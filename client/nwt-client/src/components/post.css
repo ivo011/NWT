@@ -55,6 +55,7 @@ p{
     height:10%;
     display:flex;
     justify-content: space-between;
+    border-bottom: 1px solid gray;
 }
 .post-icons svg{
     margin: 5px 10px;

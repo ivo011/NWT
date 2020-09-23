@@ -1,12 +1,11 @@
-import React, {useState, useContext} from 'react';
-import Post from './post'; 
-import axios from 'axios'; 
+import React, {useContext} from 'react';
+import Post from './post';  
 import {PostsContext} from '../context/PostsContext'; 
 
 const PostList = () => {
 
-    const {posts} = useContext(PostsContext);    
-
+    const {posts} = useContext(PostsContext);   
+   
     return ( 
         <div>
             {posts.map(post => { 
@@ -17,6 +16,8 @@ const PostList = () => {
                               picturesrc={post.picture}
                               username={post.user.username}
                               profilesrc={post.user.avatar}
+                              user_ID={post.user.user_id}
+                              likes={post.likes.length}
                         />                                               
                     </div> 
                 )

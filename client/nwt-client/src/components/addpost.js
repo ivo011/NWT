@@ -11,7 +11,7 @@ import {PostsContext} from '../context/PostsContext';
 const AddPost = () => {
 
     const {user} = useContext(UserContext);    
-    const {posts} = useContext(PostsContext);  
+    // const {posts} = useContext(PostsContext);  
 
     const {toggleNewPost} = useContext(PostsContext);  
 
@@ -40,9 +40,7 @@ const AddPost = () => {
 
     const onChange = (e) =>{            
         setPostPicture("/pic/" + e.target.files[0].name);        
-    }
-
-    
+    }    
     return ( 
         <div className="addPost">
             <div className="addPostHeader">
