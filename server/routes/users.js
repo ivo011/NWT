@@ -89,6 +89,21 @@ router.get('/user', (req, res) => {
     }    
 })
 
+router.put('/update/:id', (req, res) => {
+    models.User.update(
+      {  avatar: req.body.profilepic,
+          username:req.body.username  
+      }, 
+      {        
+        where: { 
+          user_id: req.params.id 
+        }
+      }).then(() => {
+        
+        res.send("User Updated!");
+    });
+})
+
 
 
 //DELETE USER
