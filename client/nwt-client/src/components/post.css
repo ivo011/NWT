@@ -63,3 +63,13 @@ p{
 .comment-section{
     padding:5px;
 }
+
+
+.blackLike{
+    color:black;
+    cursor: pointer;
+}
+.blueLike{
+    color:blue;
+    cursor: pointer;
+}

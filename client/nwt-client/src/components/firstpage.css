@@ -9,19 +9,39 @@
    left: 50%;  
    transform: translate(-50%, -50%);
 }
+
+@media screen and (max-width: 700px) {
+    .first-page{
+        flex-direction: column;
+    }
+    h1{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 25px;
+    }
+    h4{
+        font-size: 20px;
+    }
+    .side{
+        margin-top:10px;
+        width:70vw;
+    }
+
+  } 
+
 .side{
     padding:10px;
     border-radius: 10px; 
     box-shadow: 0px 5px 20px rgb(94, 94, 94);
     background-color: white;
-    width:30%;
+   
 }
 .content{    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-
 }
 
 .login-button{

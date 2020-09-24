@@ -140,6 +140,8 @@ const Post = ({picturesrc, profilesrc, text, username, post_ID, user_ID, likes})
             })
             .catch(err => console.log(err))
     },[postDeleted]); 
+
+    const likecolor = isLiked ? "blueLike" : "blackLike"; 
    
     return ( 
         <div className="post">
@@ -168,7 +170,7 @@ const Post = ({picturesrc, profilesrc, text, username, post_ID, user_ID, likes})
             </div>
             <div className="post-icons">
                 <div className="left">
-                    <AiOutlineLike onClick={handleLike}size="1.7rem"/>{postLikes}
+                    <AiOutlineLike  className={likecolor} onClick={handleLike}size="1.7rem"/>{postLikes}
                     
                 </div>
                 <div className="right">

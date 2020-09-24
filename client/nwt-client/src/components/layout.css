@@ -70,27 +70,24 @@ body{
   } 
 
 .header{
-    border: 2px solid rgb(146, 37, 37); 
+   
     grid-area: header; 
 }
 
-.navigation{
-    border: 2px solid rgb(54, 160, 54); 
+.navigation{   
     grid-area: navigation; 
 }
 
-.main{
-    
-    border: 2px solid rgb(196, 141, 141); 
+.main{    
+    border: 1px solid black; 
     grid-area: main; 
 }
 
-.aside{
-    border: 2px solid rgb(190, 190, 14);
+.aside{   
     grid-area: aside; 
 }
 
 .footer{
-    border: 2px solid rgb(216, 204, 180); 
+    border: 1px solid black;
     grid-area: footer; 
 }

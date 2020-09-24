@@ -5,13 +5,12 @@ import { Button, Input } from 'reactstrap';
 import RegisterModal from '../components/registerModal';
 import { UserContext } from '../context/UserContext'; 
 
-
 const Firstpage = (props) => { 
     
 
-    const [modal, setModal] = useState(false);
+    
+const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
-
     const [email, setEmail] = useState(""); 
     const [password, setPassword] = useState("");     
     
@@ -38,7 +37,7 @@ const Firstpage = (props) => {
                 <div className="content">
                     <h1>NWT Project</h1>
                     <h2>Full stack web application</h2>
-                    <h4>NodeJS | React | PostgreSQL | Express | Javascript </h4>                    
+                    <h4>NodeJS | React | PostgreSQL | Express </h4>                    
                 </div>
                
                 <div className="side"> 

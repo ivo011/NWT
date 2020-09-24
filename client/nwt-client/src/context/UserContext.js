@@ -12,6 +12,11 @@ export const UserProvider = ({children}) => {
                                     });
 
     const [logedIn, setLogedIn] = useState(false);
+    const [updated, setUpdated] = useState(false); 
+
+    const toggleUpdated = () =>{
+        setUpdated(!updated);
+    }
 
     const toggleLogin = () =>{
         setLogedIn(!logedIn);
@@ -29,11 +34,11 @@ export const UserProvider = ({children}) => {
                          joined:res.data.createdAt});                                                 
             })
             .catch(err => console.log(err))
-    }, [logedIn]);
+    }, [logedIn, updated]);
     
 
     return (
-        <UserContext.Provider value={{user, toggleLogin}}>
+        <UserContext.Provider value={{user, toggleLogin, toggleUpdated}}>
             {children}
         </UserContext.Provider>
     );

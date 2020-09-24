@@ -28,13 +28,7 @@ const Navigation = () => {
                         <IoMdNotificationsOutline size="2rem"/>
                         <li>Notifications</li>
                      </div>
-                </Link>
-                <Link to="/messages">
-                    <div className="link">
-                        <AiOutlineMessage size="2rem"/>
-                        <li>Messages</li>
-                     </div>
-                </Link>                
+                </Link>                              
                 <Logout/>                          
             </ul>            
         </nav>
