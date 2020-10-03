@@ -1,14 +1,14 @@
-.profilepic{
+.editProfile .profilepic{
     max-width: 150px;    
     border-radius: 50%;
 }
-.ModalBody{
+.editProfile .ModalBody{
     display:flex;
     flex-direction: column;
     justify-content: space-between;
     height: 200px;
 }
-.input-picture{
+.editProfile .input-picture{
     display:flex;
     align-items: center;
 }

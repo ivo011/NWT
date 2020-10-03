@@ -38,7 +38,7 @@ const EditProfileModal = ({modal, toggle}) => {
     
 
     return ( 
-        <div>
+        <div className="editProfile">
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>Update profile </ModalHeader>
                     <ModalBody className="ModalBody">
